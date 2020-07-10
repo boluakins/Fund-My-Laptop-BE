@@ -34,6 +34,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $dates = [
+        'blocked_until'
+    ];
 
     /**
      * The attributes that should be cast to native types.
@@ -42,6 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'isBlocked'=>'integer',
     ];
 
     //Password Reset Notification
